@@ -15,7 +15,7 @@ class PlaySoundsViewController: UIViewController {
   var recordedAudio: RecordedAudio!
   var audioFile: AVAudioFile!
   var audioPlayer: AVAudioPlayerNode!
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     stopButton.hidden = true
@@ -25,53 +25,72 @@ class PlaySoundsViewController: UIViewController {
 //    } else {
 //      println("file path not found")
 //    }
-    
+
     engine = AVAudioEngine()
     audioFile = AVAudioFile(forReading: recordedAudio.filePathUrl, error: nil)
     audioPlayer = AVAudioPlayerNode()
   }
-  
+
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-  
-  func audioPlay(rate: Float = 1.0, pitch: Float = 1.0) {
+
+  func audioPlay(rate: Float = 1.0, pitch: Float = 1.0, reverb: Float = 0.0, echo: Double = 0.0) {
     audioPlayer = AVAudioPlayerNode()
-    
+
     audioPlayer.stop()
     engine.stop()
     engine.reset()
     engine.attachNode(audioPlayer)
-    
+
     var timePitch = AVAudioUnitTimePitch()
     timePitch.pitch = pitch
     timePitch.rate = rate
     engine.attachNode(timePitch)
     
-    engine.connect(audioPlayer, to: timePitch, format: nil)
-    engine.connect(timePitch, to: engine.outputNode, format: nil)
+    var reverbEffect = AVAudioUnitReverb()
+    reverbEffect.wetDryMix = reverb
+    engine.attachNode(reverbEffect)
     
+    var delay = AVAudioUnitDelay()
+    delay.delayTime = NSTimeInterval(echo)
+    engine.attachNode(delay)
+    
+    engine.connect(audioPlayer, to: delay, format: nil)
+    engine.connect(delay, to: reverbEffect, format: nil)
+    engine.connect(reverbEffect, to:timePitch, format: nil)
+    engine.connect(timePitch, to: engine.outputNode, format: nil)
+
     audioPlayer.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
     engine.startAndReturnError(nil)
     audioPlayer.play()
     stopButton.hidden = false
   }
-  
+
+
   @IBAction func playFastSound(sender: UIButton) {
     audioPlay(rate: 1.8)
   }
-  
+
   @IBAction func playSlowSound(sender: UIButton) {
     audioPlay(rate: 0.5)
   }
-  
+
   @IBAction func playChipmunkSound(sender: UIButton) {
     audioPlay(pitch: 1200.0)
   }
-  
+
   @IBAction func playDarthVaderSound(sender: UIButton) {
     audioPlay(pitch: -600.0)
+  }
+
+  @IBAction func playEchoSound(sender: AnyObject) {
+    audioPlay(echo: 0.1)
+  }
+
+  @IBAction func playReverbSound(sender: UIButton) {
+    audioPlay(reverb: 100)
   }
   
   @IBAction func stopAudio(sender: AnyObject) {
@@ -81,12 +100,11 @@ class PlaySoundsViewController: UIViewController {
   }
   /*
   // MARK: - Navigation
-  
+
   // In a storyboard-based application, you will often want to do a little preparation before navigation
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
   // Get the new view controller using segue.destinationViewController.
   // Pass the selected object to the new view controller.
   }
   */
-  
 }
