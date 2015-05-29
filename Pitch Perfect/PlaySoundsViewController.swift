@@ -10,7 +10,6 @@ import UIKit
 import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
-  @IBOutlet weak var stopButton: UIButton!
   var engine: AVAudioEngine!
   var recordedAudio: RecordedAudio!
   var audioFile: AVAudioFile!
@@ -18,7 +17,6 @@ class PlaySoundsViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    stopButton.hidden = true
     engine = AVAudioEngine()
     audioFile = AVAudioFile(forReading: recordedAudio.filePathUrl, error: nil)
     audioPlayer = AVAudioPlayerNode()
@@ -55,9 +53,7 @@ class PlaySoundsViewController: UIViewController {
     audioPlayer.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
     engine.startAndReturnError(nil)
     audioPlayer.play()
-    stopButton.hidden = false
   }
-
 
   @IBAction func playFastSound(sender: UIButton) {
     var timePitch = AVAudioUnitTimePitch()
@@ -79,33 +75,25 @@ class PlaySoundsViewController: UIViewController {
 
   @IBAction func playDarthVaderSound(sender: UIButton) {
     var timePitch = AVAudioUnitTimePitch()
-    timePitch.pitch = -600.0
+    timePitch.pitch = -800.0
     audioPlay([timePitch])
   }
 
-  @IBAction func playEchoSound(sender: AnyObject) {
+  @IBAction func playTurboChipmunkSound(sender: UIButton) {
     var delayEffect = AVAudioUnitDelay()
-    delayEffect.delayTime = NSTimeInterval(0.1)
-    audioPlay([delayEffect])
+    delayEffect.delayTime = NSTimeInterval(0.6)
+    var timePitch = AVAudioUnitTimePitch()
+    timePitch.pitch = 1000.0
+    timePitch.rate = 1.2
+    audioPlay([delayEffect, timePitch])
   }
 
-  @IBAction func playReverbSound(sender: UIButton) {
+  @IBAction func playTombSound(sender: UIButton) {
     var reverbEffect = AVAudioUnitReverb()
-    reverbEffect.wetDryMix = 100
-    audioPlay([reverbEffect])
+    reverbEffect.wetDryMix = 50.0
+    var timePitch = AVAudioUnitTimePitch()
+    timePitch.pitch = -600.0
+    timePitch.rate = 0.5
+    audioPlay([reverbEffect, timePitch])
   }
-  
-  @IBAction func stopAudio(sender: AnyObject) {
-    audioPlayer.stop()
-    stopButton.hidden = true
-  }
-  /*
-  // MARK: - Navigation
-
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-  // Get the new view controller using segue.destinationViewController.
-  // Pass the selected object to the new view controller.
-  }
-  */
 }

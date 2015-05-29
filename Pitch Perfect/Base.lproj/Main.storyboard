@@ -36,15 +36,6 @@
                                     <action selector="playSlowSound:" destination="QDJ-ae-dLw" eventType="touchUpInside" id="442-Kn-klL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSY-Bv-aOy">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" image="stop">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="stopAudio:" destination="QDJ-ae-dLw" eventType="touchUpInside" id="gma-HL-XVy"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh1-Fy-FxC">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="chipmunk">
@@ -63,61 +54,54 @@
                                     <action selector="playDarthVaderSound:" destination="QDJ-ae-dLw" eventType="touchUpInside" id="70d-sb-wFt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpH-xk-LD3">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" image="darthvader">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="playDarthVaderSound:" destination="QDJ-ae-dLw" eventType="touchUpInside" id="QnG-F7-Oo7"/>
-                                    <action selector="playReverbSound:" destination="QDJ-ae-dLw" eventType="touchUpInside" id="tke-Wu-yu5"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oO-d8-Jfn">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" image="chipmunk">
+                                <state key="normal" image="turbochipmunk">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="playChipmunkSound:" destination="QDJ-ae-dLw" eventType="touchUpInside" id="LW9-gB-f0J"/>
-                                    <action selector="playEchoSound:" destination="QDJ-ae-dLw" eventType="touchUpInside" id="bka-I7-B8h"/>
+                                    <action selector="playTurboChipmunkSound:" destination="QDJ-ae-dLw" eventType="touchUpInside" id="a8a-dN-Qm5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpH-xk-LD3">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="tomb">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playTombSound:" destination="QDJ-ae-dLw" eventType="touchUpInside" id="93M-UL-L3V"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.59884251788319032" blue="0.94827204942703247" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.001108647791" green="0.5172697799" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="mh1-Fy-FxC" firstAttribute="leading" secondItem="hTl-S4-z7c" secondAttribute="leadingMargin" constant="30" id="1qe-pO-ueF"/>
                             <constraint firstItem="pig-7Z-MYZ" firstAttribute="leading" secondItem="hTl-S4-z7c" secondAttribute="leadingMargin" constant="30" id="AhZ-Gi-1Dw"/>
                             <constraint firstItem="1oO-d8-Jfn" firstAttribute="leading" secondItem="hTl-S4-z7c" secondAttribute="leadingMargin" constant="30" id="ICK-Cn-YQK"/>
-                            <constraint firstItem="qpH-xk-LD3" firstAttribute="top" secondItem="48f-2U-JJL" secondAttribute="bottom" constant="30" id="JnS-n2-AFx"/>
-                            <constraint firstItem="1oO-d8-Jfn" firstAttribute="top" secondItem="mh1-Fy-FxC" secondAttribute="bottom" constant="30" id="UcT-tV-rB4"/>
-                            <constraint firstItem="37o-9P-6tc" firstAttribute="top" secondItem="VSY-Bv-aOy" secondAttribute="bottom" constant="50" id="Xc9-rh-3Yn"/>
-                            <constraint firstItem="pig-7Z-MYZ" firstAttribute="top" secondItem="PRM-2L-2Tf" secondAttribute="bottom" constant="50" id="bKg-Qy-oWA"/>
+                            <constraint firstItem="qpH-xk-LD3" firstAttribute="top" secondItem="48f-2U-JJL" secondAttribute="bottom" constant="40" id="JnS-n2-AFx"/>
+                            <constraint firstItem="1oO-d8-Jfn" firstAttribute="top" secondItem="mh1-Fy-FxC" secondAttribute="bottom" constant="40" id="UcT-tV-rB4"/>
+                            <constraint firstItem="pig-7Z-MYZ" firstAttribute="top" secondItem="PRM-2L-2Tf" secondAttribute="bottom" constant="65" id="bKg-Qy-oWA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="48f-2U-JJL" secondAttribute="trailing" constant="30" id="faw-IA-H9w"/>
-                            <constraint firstItem="48f-2U-JJL" firstAttribute="top" secondItem="zHL-4b-qy0" secondAttribute="bottom" constant="30" id="jTF-P0-kEz"/>
+                            <constraint firstItem="48f-2U-JJL" firstAttribute="top" secondItem="zHL-4b-qy0" secondAttribute="bottom" constant="40" id="jTF-P0-kEz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zHL-4b-qy0" secondAttribute="trailing" constant="30" id="qa4-yI-xPH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qpH-xk-LD3" secondAttribute="trailing" constant="30" id="rhW-KX-yW4"/>
-                            <constraint firstItem="mh1-Fy-FxC" firstAttribute="top" secondItem="pig-7Z-MYZ" secondAttribute="bottom" constant="30" id="v7q-DI-qX4"/>
-                            <constraint firstAttribute="centerX" secondItem="VSY-Bv-aOy" secondAttribute="centerX" id="y6z-US-wB8"/>
-                            <constraint firstItem="zHL-4b-qy0" firstAttribute="top" secondItem="PRM-2L-2Tf" secondAttribute="bottom" constant="50" id="zDu-9i-IdU"/>
+                            <constraint firstItem="mh1-Fy-FxC" firstAttribute="top" secondItem="pig-7Z-MYZ" secondAttribute="bottom" constant="40" id="v7q-DI-qX4"/>
+                            <constraint firstItem="zHL-4b-qy0" firstAttribute="top" secondItem="PRM-2L-2Tf" secondAttribute="bottom" constant="65" id="zDu-9i-IdU"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="zHL-4b-qy0"/>
                                 <exclude reference="pig-7Z-MYZ"/>
-                                <exclude reference="VSY-Bv-aOy"/>
                                 <exclude reference="mh1-Fy-FxC"/>
                                 <exclude reference="48f-2U-JJL"/>
-                                <exclude reference="qpH-xk-LD3"/>
                                 <exclude reference="1oO-d8-Jfn"/>
+                                <exclude reference="qpH-xk-LD3"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Xc9-rh-3Yn"/>
                                 <exclude reference="ICK-Cn-YQK"/>
                                 <exclude reference="UcT-tV-rB4"/>
                                 <exclude reference="faw-IA-H9w"/>
                                 <exclude reference="jTF-P0-kEz"/>
-                                <exclude reference="y6z-US-wB8"/>
                                 <exclude reference="1qe-pO-ueF"/>
                                 <exclude reference="v7q-DI-qX4"/>
                                 <exclude reference="AhZ-Gi-1Dw"/>
@@ -132,19 +116,16 @@
                             <mask key="subviews">
                                 <include reference="zHL-4b-qy0"/>
                                 <include reference="pig-7Z-MYZ"/>
-                                <include reference="VSY-Bv-aOy"/>
                                 <include reference="mh1-Fy-FxC"/>
                                 <include reference="48f-2U-JJL"/>
-                                <include reference="qpH-xk-LD3"/>
                                 <include reference="1oO-d8-Jfn"/>
+                                <include reference="qpH-xk-LD3"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Xc9-rh-3Yn"/>
                                 <include reference="ICK-Cn-YQK"/>
                                 <include reference="UcT-tV-rB4"/>
                                 <include reference="faw-IA-H9w"/>
                                 <include reference="jTF-P0-kEz"/>
-                                <include reference="y6z-US-wB8"/>
                                 <include reference="1qe-pO-ueF"/>
                                 <include reference="v7q-DI-qX4"/>
                                 <include reference="AhZ-Gi-1Dw"/>
@@ -156,9 +137,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <connections>
-                        <outlet property="stopButton" destination="VSY-Bv-aOy" id="bSe-wG-pWd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLX-Lg-aLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -238,9 +216,10 @@
                             <constraint firstItem="0ZG-Z0-6BE" firstAttribute="centerX" secondItem="hc8-ma-XLr" secondAttribute="centerX" constant="0.5" id="4xO-Vr-OB6"/>
                             <constraint firstAttribute="centerX" secondItem="hc8-ma-XLr" secondAttribute="centerX" id="Axb-rS-BYK"/>
                             <constraint firstAttribute="centerX" secondItem="Svx-mA-FLz" secondAttribute="centerX" id="Cea-aV-4y7"/>
-                            <constraint firstAttribute="centerX" secondItem="rrb-VM-KvT" secondAttribute="centerX" id="L0d-KF-jdn"/>
+                            <constraint firstItem="rrb-VM-KvT" firstAttribute="top" secondItem="hc8-ma-XLr" secondAttribute="bottom" constant="8" id="GVw-i1-QcQ"/>
                             <constraint firstAttribute="centerY" secondItem="hc8-ma-XLr" secondAttribute="centerY" id="N7R-cF-KKW"/>
-                            <constraint firstAttribute="centerY" secondItem="rrb-VM-KvT" secondAttribute="centerY" id="ZaE-RP-Gn2"/>
+                            <constraint firstItem="rrb-VM-KvT" firstAttribute="leading" secondItem="hc8-ma-XLr" secondAttribute="trailing" constant="-104" id="eux-ez-Mhu"/>
+                            <constraint firstAttribute="centerX" secondItem="rrb-VM-KvT" secondAttribute="centerX" id="inc-Bh-IQJ"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Svx-mA-FLz" secondAttribute="bottom" constant="50" id="ntt-os-BKf"/>
                             <constraint firstItem="0ZG-Z0-6BE" firstAttribute="top" secondItem="hc8-ma-XLr" secondAttribute="bottom" constant="8" id="ySd-uQ-SUC"/>
                         </constraints>
@@ -254,8 +233,9 @@
                             <mask key="constraints">
                                 <exclude reference="Axb-rS-BYK"/>
                                 <exclude reference="N7R-cF-KKW"/>
-                                <exclude reference="L0d-KF-jdn"/>
-                                <exclude reference="ZaE-RP-Gn2"/>
+                                <exclude reference="GVw-i1-QcQ"/>
+                                <exclude reference="eux-ez-Mhu"/>
+                                <exclude reference="inc-Bh-IQJ"/>
                                 <exclude reference="4xO-Vr-OB6"/>
                                 <exclude reference="ySd-uQ-SUC"/>
                                 <exclude reference="Cea-aV-4y7"/>
@@ -272,8 +252,9 @@
                             <mask key="constraints">
                                 <include reference="Axb-rS-BYK"/>
                                 <include reference="N7R-cF-KKW"/>
-                                <include reference="L0d-KF-jdn"/>
-                                <include reference="ZaE-RP-Gn2"/>
+                                <include reference="GVw-i1-QcQ"/>
+                                <include reference="eux-ez-Mhu"/>
+                                <include reference="inc-Bh-IQJ"/>
                                 <include reference="4xO-Vr-OB6"/>
                                 <include reference="ySd-uQ-SUC"/>
                                 <include reference="Cea-aV-4y7"/>
@@ -320,5 +301,7 @@
         <image name="microphone" width="100" height="100"/>
         <image name="slow" width="100" height="100"/>
         <image name="stop" width="50" height="50"/>
+        <image name="tomb" width="100" height="100"/>
+        <image name="turbochipmunk" width="100" height="100"/>
     </resources>
 </document>
