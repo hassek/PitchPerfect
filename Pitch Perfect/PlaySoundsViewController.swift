@@ -19,13 +19,6 @@ class PlaySoundsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     stopButton.hidden = true
-//    if var filePath = NSBundle.mainBundle().pathForResource("UGH", ofType: "mp3") {
-//      var fileUrl = NSURL.fileURLWithPath(filePath)
-//
-//    } else {
-//      println("file path not found")
-//    }
-
     engine = AVAudioEngine()
     audioFile = AVAudioFile(forReading: recordedAudio.filePathUrl, error: nil)
     audioPlayer = AVAudioPlayerNode()
@@ -36,7 +29,9 @@ class PlaySoundsViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 
-  func audioPlay(rate: Float = 1.0, pitch: Float = 1.0, reverb: Float = 0.0, echo: Double = 0.0) {
+  func audioPlay(effects: [AVAudioNode!]) {
+    // TODO: figure out how to let user send multiple effects to apply to sound.
+    // Why on earth AVAudioPlayerNode doesn't have a delegate!
     audioPlayer = AVAudioPlayerNode()
 
     audioPlayer.stop()
@@ -44,23 +39,18 @@ class PlaySoundsViewController: UIViewController {
     engine.reset()
     engine.attachNode(audioPlayer)
 
-    var timePitch = AVAudioUnitTimePitch()
-    timePitch.pitch = pitch
-    timePitch.rate = rate
-    engine.attachNode(timePitch)
-    
-    var reverbEffect = AVAudioUnitReverb()
-    reverbEffect.wetDryMix = reverb
-    engine.attachNode(reverbEffect)
-    
-    var delay = AVAudioUnitDelay()
-    delay.delayTime = NSTimeInterval(echo)
-    engine.attachNode(delay)
-    
-    engine.connect(audioPlayer, to: delay, format: nil)
-    engine.connect(delay, to: reverbEffect, format: nil)
-    engine.connect(reverbEffect, to:timePitch, format: nil)
-    engine.connect(timePitch, to: engine.outputNode, format: nil)
+    // Attach all effect to the engine
+    for effect in effects {
+        engine.attachNode(effect)
+    }
+
+    // connect each effect to the audioPlayer
+    engine.connect(audioPlayer, to: effects[0], format: nil)
+    var i = 0;
+    for (i; i < effects.count - 1; i++) {
+      engine.connect(effects[i], to: effects[i + 1], format: nil)
+    }
+    engine.connect(effects[i], to: engine.outputNode, format: nil)
 
     audioPlayer.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
     engine.startAndReturnError(nil)
@@ -70,32 +60,43 @@ class PlaySoundsViewController: UIViewController {
 
 
   @IBAction func playFastSound(sender: UIButton) {
-    audioPlay(rate: 1.8)
+    var timePitch = AVAudioUnitTimePitch()
+    timePitch.rate = 1.8
+    audioPlay([timePitch])
   }
 
   @IBAction func playSlowSound(sender: UIButton) {
-    audioPlay(rate: 0.5)
+    var timePitch = AVAudioUnitTimePitch()
+    timePitch.rate = 0.5
+    audioPlay([timePitch])
   }
 
   @IBAction func playChipmunkSound(sender: UIButton) {
-    audioPlay(pitch: 1200.0)
+    var timePitch = AVAudioUnitTimePitch()
+    timePitch.pitch = 1200.0
+    audioPlay([timePitch])
   }
 
   @IBAction func playDarthVaderSound(sender: UIButton) {
-    audioPlay(pitch: -600.0)
+    var timePitch = AVAudioUnitTimePitch()
+    timePitch.pitch = -600.0
+    audioPlay([timePitch])
   }
 
   @IBAction func playEchoSound(sender: AnyObject) {
-    audioPlay(echo: 0.1)
+    var delayEffect = AVAudioUnitDelay()
+    delayEffect.delayTime = NSTimeInterval(0.1)
+    audioPlay([delayEffect])
   }
 
   @IBAction func playReverbSound(sender: UIButton) {
-    audioPlay(reverb: 100)
+    var reverbEffect = AVAudioUnitReverb()
+    reverbEffect.wetDryMix = 100
+    audioPlay([reverbEffect])
   }
   
   @IBAction func stopAudio(sender: AnyObject) {
     audioPlayer.stop()
-//    audioPlayer.currentTime = 0
     stopButton.hidden = true
   }
   /*

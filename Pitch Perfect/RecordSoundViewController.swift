@@ -43,10 +43,9 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     let currentDateTime = NSDate()
     let formatter = NSDateFormatter()
     formatter.dateFormat = "ddMMyyyy-HHmmss"
-    let recordingName = formatter.stringFromDate(currentDateTime)+".wav"
+    let recordingName = formatter.stringFromDate(currentDateTime) + ".wav"
     let pathArray = [dirPath, recordingName]
     let filePath = NSURL.fileURLWithPathComponents(pathArray)
-    println(filePath)
     
     var session = AVAudioSession.sharedInstance()
     session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
@@ -66,10 +65,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
   
   func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
     if (flag) {
-      recordedAudio = RecordedAudio()
-      recordedAudio.filePathUrl = recorder.url
-      recordedAudio.title = recorder.url.lastPathComponent
-      println("inside")
+      recordedAudio = RecordedAudio(filePathUrl: recorder.url, title: recorder.url.lastPathComponent)
       self.performSegueWithIdentifier("stopSound", sender: recordedAudio)
       
     } else {
@@ -88,4 +84,3 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
   }
 
 }
-
