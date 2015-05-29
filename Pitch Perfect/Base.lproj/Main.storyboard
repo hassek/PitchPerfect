@@ -231,15 +231,15 @@
                                 <exclude reference="rrb-VM-KvT"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Axb-rS-BYK"/>
-                                <exclude reference="N7R-cF-KKW"/>
+                                <exclude reference="4xO-Vr-OB6"/>
+                                <exclude reference="ySd-uQ-SUC"/>
+                                <exclude reference="ntt-os-BKf"/>
                                 <exclude reference="GVw-i1-QcQ"/>
                                 <exclude reference="eux-ez-Mhu"/>
                                 <exclude reference="inc-Bh-IQJ"/>
-                                <exclude reference="4xO-Vr-OB6"/>
-                                <exclude reference="ySd-uQ-SUC"/>
                                 <exclude reference="Cea-aV-4y7"/>
-                                <exclude reference="ntt-os-BKf"/>
+                                <exclude reference="Axb-rS-BYK"/>
+                                <exclude reference="N7R-cF-KKW"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -250,15 +250,15 @@
                                 <include reference="rrb-VM-KvT"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Axb-rS-BYK"/>
-                                <include reference="N7R-cF-KKW"/>
+                                <include reference="4xO-Vr-OB6"/>
+                                <include reference="ySd-uQ-SUC"/>
+                                <include reference="ntt-os-BKf"/>
                                 <include reference="GVw-i1-QcQ"/>
                                 <include reference="eux-ez-Mhu"/>
                                 <include reference="inc-Bh-IQJ"/>
-                                <include reference="4xO-Vr-OB6"/>
-                                <include reference="ySd-uQ-SUC"/>
                                 <include reference="Cea-aV-4y7"/>
-                                <include reference="ntt-os-BKf"/>
+                                <include reference="Axb-rS-BYK"/>
+                                <include reference="N7R-cF-KKW"/>
                             </mask>
                         </variation>
                     </view>
