@@ -14,6 +14,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
   @IBOutlet var recordingLabel: UILabel!
   @IBOutlet var stopButton: UIButton!
   @IBOutlet var recordButton: UIButton!
+  @IBOutlet weak var tapRecordLabel: UILabel!
   
   var audioRecorder: AVAudioRecorder!
   var recordedAudio: RecordedAudio!
@@ -25,6 +26,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
   override func viewWillAppear(animated: Bool) {
     stopButton.hidden = true
     recordButton.enabled = true
+    tapRecordLabel.hidden = false
   }
   
   override func didReceiveMemoryWarning() {
@@ -36,6 +38,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     recordButton.enabled = false
     recordingLabel.hidden = false
     stopButton.hidden = false
+    tapRecordLabel.hidden = true
 
     //Inside func recordAudio(sender: UIButton)
     let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String

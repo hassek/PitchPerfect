@@ -112,20 +112,20 @@
                                 <exclude reference="1oO-d8-Jfn"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="AhZ-Gi-1Dw"/>
-                                <exclude reference="bKg-Qy-oWA"/>
-                                <exclude reference="1qe-pO-ueF"/>
-                                <exclude reference="v7q-DI-qX4"/>
-                                <exclude reference="qa4-yI-xPH"/>
-                                <exclude reference="zDu-9i-IdU"/>
-                                <exclude reference="faw-IA-H9w"/>
-                                <exclude reference="jTF-P0-kEz"/>
+                                <exclude reference="Xc9-rh-3Yn"/>
                                 <exclude reference="ICK-Cn-YQK"/>
                                 <exclude reference="UcT-tV-rB4"/>
+                                <exclude reference="faw-IA-H9w"/>
+                                <exclude reference="jTF-P0-kEz"/>
+                                <exclude reference="y6z-US-wB8"/>
+                                <exclude reference="1qe-pO-ueF"/>
+                                <exclude reference="v7q-DI-qX4"/>
+                                <exclude reference="AhZ-Gi-1Dw"/>
+                                <exclude reference="bKg-Qy-oWA"/>
                                 <exclude reference="JnS-n2-AFx"/>
                                 <exclude reference="rhW-KX-yW4"/>
-                                <exclude reference="y6z-US-wB8"/>
-                                <exclude reference="Xc9-rh-3Yn"/>
+                                <exclude reference="qa4-yI-xPH"/>
+                                <exclude reference="zDu-9i-IdU"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -139,20 +139,20 @@
                                 <include reference="1oO-d8-Jfn"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="AhZ-Gi-1Dw"/>
-                                <include reference="bKg-Qy-oWA"/>
-                                <include reference="1qe-pO-ueF"/>
-                                <include reference="v7q-DI-qX4"/>
-                                <include reference="qa4-yI-xPH"/>
-                                <include reference="zDu-9i-IdU"/>
-                                <include reference="faw-IA-H9w"/>
-                                <include reference="jTF-P0-kEz"/>
+                                <include reference="Xc9-rh-3Yn"/>
                                 <include reference="ICK-Cn-YQK"/>
                                 <include reference="UcT-tV-rB4"/>
+                                <include reference="faw-IA-H9w"/>
+                                <include reference="jTF-P0-kEz"/>
+                                <include reference="y6z-US-wB8"/>
+                                <include reference="1qe-pO-ueF"/>
+                                <include reference="v7q-DI-qX4"/>
+                                <include reference="AhZ-Gi-1Dw"/>
+                                <include reference="bKg-Qy-oWA"/>
                                 <include reference="JnS-n2-AFx"/>
                                 <include reference="rhW-KX-yW4"/>
-                                <include reference="y6z-US-wB8"/>
-                                <include reference="Xc9-rh-3Yn"/>
+                                <include reference="qa4-yI-xPH"/>
+                                <include reference="zDu-9i-IdU"/>
                             </mask>
                         </variation>
                     </view>
@@ -213,13 +213,34 @@
                                     <action selector="stopAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qhp-Ua-bQa"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrb-VM-KvT">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="kdN-pG-Ci5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.02034531069" green="0.0014460000950000001" blue="0.4545454545" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="kdN-pG-Ci5"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="kdN-pG-Ci5"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0011086477909597603" green="0.51726977987239486" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="0ZG-Z0-6BE" firstAttribute="centerX" secondItem="hc8-ma-XLr" secondAttribute="centerX" constant="0.5" id="4xO-Vr-OB6"/>
                             <constraint firstAttribute="centerX" secondItem="hc8-ma-XLr" secondAttribute="centerX" id="Axb-rS-BYK"/>
                             <constraint firstAttribute="centerX" secondItem="Svx-mA-FLz" secondAttribute="centerX" id="Cea-aV-4y7"/>
+                            <constraint firstAttribute="centerX" secondItem="rrb-VM-KvT" secondAttribute="centerX" id="L0d-KF-jdn"/>
                             <constraint firstAttribute="centerY" secondItem="hc8-ma-XLr" secondAttribute="centerY" id="N7R-cF-KKW"/>
+                            <constraint firstAttribute="centerY" secondItem="rrb-VM-KvT" secondAttribute="centerY" id="ZaE-RP-Gn2"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Svx-mA-FLz" secondAttribute="bottom" constant="50" id="ntt-os-BKf"/>
                             <constraint firstItem="0ZG-Z0-6BE" firstAttribute="top" secondItem="hc8-ma-XLr" secondAttribute="bottom" constant="8" id="ySd-uQ-SUC"/>
                         </constraints>
@@ -228,14 +249,17 @@
                                 <exclude reference="hc8-ma-XLr"/>
                                 <exclude reference="0ZG-Z0-6BE"/>
                                 <exclude reference="Svx-mA-FLz"/>
+                                <exclude reference="rrb-VM-KvT"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="4xO-Vr-OB6"/>
-                                <exclude reference="ySd-uQ-SUC"/>
-                                <exclude reference="ntt-os-BKf"/>
-                                <exclude reference="Cea-aV-4y7"/>
                                 <exclude reference="Axb-rS-BYK"/>
                                 <exclude reference="N7R-cF-KKW"/>
+                                <exclude reference="L0d-KF-jdn"/>
+                                <exclude reference="ZaE-RP-Gn2"/>
+                                <exclude reference="4xO-Vr-OB6"/>
+                                <exclude reference="ySd-uQ-SUC"/>
+                                <exclude reference="Cea-aV-4y7"/>
+                                <exclude reference="ntt-os-BKf"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -243,14 +267,17 @@
                                 <include reference="hc8-ma-XLr"/>
                                 <include reference="0ZG-Z0-6BE"/>
                                 <include reference="Svx-mA-FLz"/>
+                                <include reference="rrb-VM-KvT"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4xO-Vr-OB6"/>
-                                <include reference="ySd-uQ-SUC"/>
-                                <include reference="ntt-os-BKf"/>
-                                <include reference="Cea-aV-4y7"/>
                                 <include reference="Axb-rS-BYK"/>
                                 <include reference="N7R-cF-KKW"/>
+                                <include reference="L0d-KF-jdn"/>
+                                <include reference="ZaE-RP-Gn2"/>
+                                <include reference="4xO-Vr-OB6"/>
+                                <include reference="ySd-uQ-SUC"/>
+                                <include reference="Cea-aV-4y7"/>
+                                <include reference="ntt-os-BKf"/>
                             </mask>
                         </variation>
                     </view>
@@ -259,6 +286,7 @@
                         <outlet property="recordButton" destination="hc8-ma-XLr" id="Fgn-dJ-4Rs"/>
                         <outlet property="recordingLabel" destination="0ZG-Z0-6BE" id="oHx-um-So0"/>
                         <outlet property="stopButton" destination="Svx-mA-FLz" id="AZv-Ke-SqL"/>
+                        <outlet property="tapRecordLabel" destination="rrb-VM-KvT" id="RHH-4v-UCo"/>
                         <segue destination="QDJ-ae-dLw" kind="show" identifier="stopSound" id="1W0-PN-oIV"/>
                     </connections>
                 </viewController>
